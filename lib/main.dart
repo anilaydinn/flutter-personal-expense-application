@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import './transaction.dart';
 
 void main() {
@@ -87,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         Text(
-                          tx.date.toString(),
+                          DateFormat().add_yMMMd().format(tx.date),
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
