@@ -45,16 +45,37 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Card(
-            color: Colors.blue,
-            child: Container(
-              width: double.infinity,
+          Container(
+            width: double.infinity,
+            child: Card(
+              color: Colors.blue,
               child: Text("CHART!"),
+              elevation: 5,
             ),
-            elevation: 5,
+          ),
+          Card(
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title'),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Amount'),
+                  ),
+                  FlatButton(
+                    onPressed: () {},
+                    child: Text("Add Transaction"),
+                    textColor: Colors.purple,
+                  )
+                ],
+              ),
+            ),
           ),
           Column(
             children: transactions.map((tx) {
